@@ -8,9 +8,8 @@
   </head>
   <body>
     <h1>Live Examples</h1>
-
     <?php
-      //Valid ways to code variables
+      //Valid ways to code variable
       $first_name;
       $person;
       $address1;
@@ -20,99 +19,102 @@
       $slider = "This is lowercase";
       $Slider = "This is uppercase";
 
-      echo $slider . "<br />";
-      echo $Slider . "<br />";
+      echo "<p>$slider</p>";
+      echo "<p>$Slider</p>";
 
       //Numbers - Integers
-      $number1 = 5;
-      $number2 = -4;
-      $number3 = 65165143523454;
+      $number1 = 143;
+      $number2 = -1233;
+      $number3 = 4;
+      $number4 = 5612;
 
-      echo number_format($number3) . "<br />";
+      echo number_format($number4) . "<br />";
 
-      //Floats
-      $floats1 = 2.5;
-      $floats2 = 125.7;
-      $floats3 = -156.7;
+      //Numbers - Floats
+      $floats1 = 5.5;
+      $floats2 = -3.5;
+      $floats3 = 265.54;
 
-      //Boolean
+      //Booleans
       $slider = true;
       $slider = false;
 
       //Strings
-      $strings1 = "This is a double quotation string";
-      $strings2 = 'This is a single quotation string';
+      $string1 = "<p class='entry-content'>This is a double quote string</p>";
+      $string2 = '<p>This is a single quote string</p>';
+
+      echo $string1;
+      echo $string2;
 
       $firstName = "Efren";
-      $lastName = "Vasquez";
+      $lastName  = "Vasquez";
 
-      echo "Hello my name is $firstName $lastName" . "<br />";
-      echo 'Hello my name is $firstName $lastName' . "<br />";
+      echo "<p>Hello my first name is $firstName and my last name is $lastName</p>";
+      echo '<p>Hello my first name is $firstName and my last name is $lastName</p>';
+      echo '<p>Hello my first name is ' . $firstName . ' and my last name is ' . $lastName . '</p>';
+    ?>
 
-      echo "<p class='entry-content'>My name is $firstName and I live in Florida</p>";
+    <h2 class="entry-title"><?php echo "Title Page"; ?></h2>
 
-      //Arrays
-      $teams = array (
+    <?php
+      //Arrays - Indexed
+      $teams = array(
         "Cubs",
-        "Bears",
         "Bulls",
-        "Blackhawks"
+        "Blackhawks",
+        "Bears"
       );
 
-      echo "<p class='team'>My favorite baseball team are the $teams[4]</p>";
+      echo "<p>My favorite baseball team are the $teams[0]</p>";
 
       $teams[] = "Fire";
+      echo "<p>My favorite MLS team is the $teams[4]</p>";
 
-      echo "<p class='team'>My favorite MLS team are the $teams[4]</p>";
-
-      //Associative Arrays
+      //Associative Array
       $citiesStates = array(
-        "Gainesville" => "Florida",
-        "Seattle"     => "Washington",
-        "Houston"     => "Texas"
+        "Gainesville"  => "Florida",
+        "Seattle"      => "Washington",
+        "Houston"      => "Texas"
       );
 
-      echo $citiesStates['Seattle'];
+      $favoriteState = $citiesStates["Houston"];
+      echo "<p>My favorite city is $favoriteState</p>";
 
-      $favoriteCity = $citiesStates['Seattle'];
-      echo "<p>My favorite city is $favoriteCity</p>";
-
-      //Multidimensional Array
+      //Multidimensional Arrays
       $students = array(
-        "Steve"   => array(
+        "Steve" => array(
           "Student ID"  => 112233,
-          "Grades"      => "A"
+          "Grades"      => "A+"
         ),
         "Allison" => array(
-          "Student ID"  => 223344,
+          "Student ID"  => 445566,
           "Grades"      => "A-"
         ),
-        "Billy"   => array(
-          "Student ID"  => 556677,
+        "Billy" => array(
+          "Student ID"  => 778899,
           "Grades"      => "C"
         )
       );
 
       $mmc6145 = array(
         "Professor"           => "Efren Vasquez",
-        "Class Name"          => "Advanced Web Topics 3",
+        "Class Name"          => "Advanced Web Topic 3",
         "Students"            => $students,
         "Semester"            => "Summer 2020",
-        "Number of Students"  => 16
+        "Number of Students"  => 23
       );
 
-      echo "<h2>The Professor for MMC6145 is {$mmc6145['Professor']}</h2>";
+      echo "<h2>The professor for MMC6145 is {$mmc6145['Professor']}</h2>";
       echo "<h3>What is the name of the class?</h3>";
-      echo $mmc6145['Class Name'];
-      echo "<h3>How many students are there in this class?</h3>";
-      echo "<p>There are {$mmc6145['Number of Students']} students</p>";
-      echo "<h3>What was the highest grade in the class?</h3>";
-      echo "<p>" . $mmc6145['Students']["Steve"]["Grades"] . " was the highest grade in the class</p>";
-
-      echo $mmc6145['Students']["Allison"]["Student ID"];
-      echo $mmc6145['Students']["Billy"]["Grades"];
-
+      echo $mmc6145["Class Name"];
+      echo "<h3>How many students are in the class?</h3>";
+      echo "<p>There are {$mmc6145['Number of Students']} students </p>";
+      echo "<h3>What is the highest grade?</h3>";
+      echo "<p>" . $mmc6145["Students"]["Steve"]["Grades"] . "</p>";
+      echo $mmc6145["Semester"] . "<br />";
+      echo $mmc6145["Students"]["Allison"]["Student ID"];
     ?>
+
 
   </body>
 </html>
